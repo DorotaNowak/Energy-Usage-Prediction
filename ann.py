@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 import glob, os
 
 # Import training set
-path_train = r'C:\Users\Dorota Nowak\Desktop\Studia\2018-2019 lato\Podstawy Systemów Sztucznej Inteligencji\Energia\train'
+path_train = r'C:\Users\Dorota Nowak\Desktop\Energia\train'
 all_files_train = glob.glob(os.path.join(path_train, "*.csv"))
 
 df_from_each_file = (pd.read_csv(f, sep=';') for f in all_files_train)
@@ -17,7 +17,7 @@ train.rename(columns={'Godz.': 'hr'}, inplace=True)
 train.replace('2A', '2', inplace=True)
 
 # Import test set
-path_test = r'C:\Users\Dorota Nowak\Desktop\Studia\2018-2019 lato\Podstawy Systemów Sztucznej Inteligencji\Energia\test'
+path_test = r'C:\Users\Dorota Nowak\Desktop\Energia\test'
 all_files_test = glob.glob(os.path.join(path_test, "*.csv"))
 
 df_from_each_file = (pd.read_csv(f, sep=';') for f in all_files_test)
